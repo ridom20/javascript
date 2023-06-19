@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="height: 100vh;">
+    <div>
+        <button onclick="changeSource()">Change image source by click</button> <br>
+        <img id="img" src="images/test.jpeg" width="200" height="200" alt="Image">
+    </div>
+    <script>
+        function changeSource() {
+            let imageSrcChange = document.getElementById('img');
+
+            imageSrcChange.src = 'images/react.png';
+
+        }
+    </script>
+</body>
+
+</html>

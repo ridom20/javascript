@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.highlight{
+    color: red;
+}
+</style>
+<body>
+    <p class="highlight-paragraph" id="paragraph1">Paragraph 1</p>
+    <p class="highlight-paragraph" id="paragraph2">Paragraph 2</p>
+    <p id="paragraph3">Paragraph 3</p>
+    <p class="highlight-paragraph" id="paragraph4">Paragraph 4</p>
+    <button onclick="highlightParagraphs()">Highlight Paragraphs</button>
+    <script>
+      function highlightParagraphs() {
+      var paragraphs = document.querySelectorAll(".highlight-paragraph");
+      for (var i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].classList.add("highlight");
+      }
+    }
+    </script>
+</body>
+</html>

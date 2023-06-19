@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function browserDetect() {
+            const browserName = navigator.userAgent;
+            const browserVersion = navigator.appVersion;
+
+            return {
+                name: browserName,
+                version: browserVersion
+            };
+        }
+        function displayBrowserInfo() {
+            const browserInfo = browserDetect();
+            console.log(`Browser Name: ${browserInfo.name}`);
+            console.log(`Browser Version: ${browserInfo.version}`);
+        }
+        displayBrowserInfo();
+    </script>
+</body>
+
+</html>

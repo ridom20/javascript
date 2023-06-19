@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getDayOfWeek(dateString) {
+            const date = new Date(dateString);
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayIndex = date.getDay();
+            return daysOfWeek[dayIndex];
+        }
+
+        const date = '2023-06-18';
+        const dayOfWeek = getDayOfWeek(date);
+        console.log(`The day of week is ${dayOfWeek}`);
+
+
+        function getCurrentDayOfWeek() {
+            const currentDate = new Date();
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayIndex = currentDate.getDay();
+            return daysOfWeek[dayIndex];
+        }
+
+        const currentDayOfWeek = getCurrentDayOfWeek();
+        console.log(`Current day of week is ${currentDayOfWeek}`);
+
+
+    </script>
+</body>
+
+</html>

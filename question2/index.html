@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getResult(numbers) {
+            let sumOfSquares = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sumOfSquares += Math.pow(numbers[i], 2);
+            }
+            const squareRoot = Math.sqrt(sumOfSquares);
+            return squareRoot;
+        }
+        const numbers = [2, 3, 4, 5];
+        const result = getResult(numbers).toFixed(3);
+        console.log(`The square root of the sum of squares is: ${result}`);
+    </script>
+</body>
+
+</html>

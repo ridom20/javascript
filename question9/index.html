@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .error-message{
+        color: red;
+    }
+</style>
+
+<body>
+    <form onsubmit="return formValidate()">
+        <label for="name">Name:</label> <br>
+        <input type="text" id="name" name="name" >
+        <div id="nameError" class="error-message"></div>
+
+        <label for="email">Email:</label> <br>
+        <input type="email" id="email" name="email" >
+        <div id="emailError" class="error-message"></div>
+
+        <label for="password">Password:</label> <br>
+        <input type="password" id="password" name="password" >
+        <div id="passwordError" class="error-message"></div>
+
+        <label for="confirmPassword">Confirm Password:</label> <br>
+        <input type="password" id="confirmPassword" name="confirmPassword" >
+        <div id="confirmPasswordError" class="error-message"></div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function formValidate() {
+            var nameInput = document.getElementById("name");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var confirmPasswordInput = document.getElementById("confirmPassword");
+
+            var name = nameInput.value.trim();
+            var email = emailInput.value.trim();
+            var password = passwordInput.value;
+            var confirmPassword = confirmPasswordInput.value;
+
+            var nameRegex = /^[a-zA-Z]+$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+            var nameError = document.getElementById("nameError");
+            var emailError = document.getElementById("emailError");
+            var passwordError = document.getElementById("passwordError");
+            var confirmPasswordError = document.getElementById("confirmPasswordError");
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+
+            var isValid = true;
+
+            if (name === "") {
+                nameError.textContent = "Name is required.";
+                isValid = false;
+            } else if (!/^[a-zA-Z]+$/.test(name)) {
+                nameError.textContent = "Name should contain only letters.";
+                isValid = false;
+            }
+
+            if (email === "") {
+                emailError.textContent = "Email is required.";
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailError.textContent = "Invalid email address.";
+                isValid = false;
+            }
+
+            if (password === "") {
+                passwordError.textContent = "Password is required.";
+                isValid = false;
+            } else if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password)) {
+                passwordError.textContent = "Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit.";
+                isValid = false;
+            }
+
+            if (confirmPassword === "") {
+                confirmPasswordError.textContent = "Confirm Password is required.";
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                confirmPasswordError.textContent = "Passwords do not match.";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+
+
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function openWindow(url, width, height) {
+            const windowFeatures = `width=${width},height=${height}`;
+            window.open(url, '_blank', windowFeatures);
+        }
+
+        function openExampleWindow() {
+            const url = 'https://www.example.com';
+            const width = 800;
+            const height = 600;
+            openWindow(url, width, height);
+        }
+  openExampleWindow();
+    </script>
+</body>
+
+</html>
